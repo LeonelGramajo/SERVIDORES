@@ -1,0 +1,47 @@
+<!--2. Codificar un programa que simule un monitor de luz ambiental mediante un LDR. Para este control se posee una página web con las siguientes características:
+* Título de primer nivel con leyenda “Monitor de Luz Ambiental”, con fuente ‘Segoe UI’ y centrado.
+* El color de fondo del cuerpo (body) deberá cambiar dinámicamente según la luz medida: #2c3e50 (azul oscuro) para noche, #f1c40f (amarillo) para día,
+ y #e67e22 (naranja) para atardecer, con texto de color blanco para todos los casos.
+* Una división de clase “lectura” con un borde blanco de 3px punteado (dotted), radio de borde de 20px y un padding de 25px.
+* Dentro de esta división, una sección (span) mostrará la leyenda “Nivel de Luz: XXX%”, donde XXX es el valor del LDR mapeado 
+a un porcentaje. 
+El valor porcentual deberá estar en negrita y tener un tamaño de fuente de 40px.
+* La página se actualizará con los nuevos valores de luminosidad y color de fondo cada vez que el usuario la recargue.
+-->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <title>Monitor Luz Ambiental</title>
+  <style>
+    body { background-color: #33502c; text-align: center; padding-top: 50px;
+      transition: background-color 0.5s ease;
+     }
+     .noche {
+    background-color: #2c3e50;
+}
+.dia {
+    background-color: #f1c40f;
+}
+.atardecer {
+    background-color: #e67e22;
+}
+.lectura{border:  dotted 3px solid rgb(255, 255, 255); border-radius: 20px; padding: 25px;}
+    .titulo { font-family: 'Arial Black', monospace; font-weight: bold; font-style: Segoe UI; font-size: 40px; color: #ffffff; }
+    #nivelLuz {
+    font-weight: bold;
+    font-size: 40px;
+}
+  </style>
+</head>
+<body>
+  <h1 class='titulo'>Monitor de Luz Ambiental</h1>
+  <span id ="nivelLuz">Nivel de Luz: __LDR__</span>
+  <a href="'/azul"><body class = "noche"></a>
+    <a href="'/amarillo"><body class = "dia"></a>
+      <a href="'/naranja"><body class = "atardecer"></a>  
+</body>
+</html>
